@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tekopo</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos generales (Sin cambios) */
+        body {
+            background-color: #f0f0f0; 
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Contenedor principal (Sin cambios) */
+        .card-container {
+            width: 375px; 
+            max-width: 100%;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            display: flex; 
+            flex-direction: column;
+            background-color: #cacaca;
+        }
+
+        /* Contenedor de imagen (Sin cambios) */
+        .image-wrapper {
+            width: 100%;
+            height: 250px; 
+            overflow: hidden; 
+            border-bottom-left-radius: 35px;
+            border-bottom-right-radius: 35px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%; 
+            display: block;
+            object-fit: cover; 
+        }
+
+        /* Contenido de texto (Sin cambios) */
+        .card-content {
+            background-color: #cacaca; 
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            padding: 30px;
+            padding-bottom: 40px; 
+            text-align: center;
+        }
+
+        .card-content h1 {
+            color: #000;
+            font-size: 4rem; 
+            font-weight: 900;
+            margin: 0 0 10px 0;
+            text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+            letter-spacing: -2px; 
+        }
+
+        .card-content h2 {
+            color: #000;
+            font-size: 1.25rem; 
+            font-weight: 600;
+            margin: 0 0 20px 0;
+        }
+
+        .card-content p {
+            color: #000;
+            font-size: 0.9rem; 
+            line-height: 1.5;
+            margin: 0 0 30px 0;
+            padding: 0 10px; 
+        }
+
+        .card-content h3 {
+            font-family: 'Alfa Slab One', cursive;
+            color: #d90429; 
+            font-size: 2.5rem; 
+            margin: 0 0 30px 0;
+            font-weight: 400; 
+        }
+
+        .card-content button {
+            background-color: #2b2b2b; 
+            color: #ffffff;
+            border: none;
+            border-radius: 50px; 
+            padding: 18px 40px;
+            font-size: 1rem; 
+            font-weight: 700;
+            letter-spacing: 1px;
+            cursor: pointer;
+            width: 100%; 
+            transition: background-color 0.3s ease; 
+        }
+
+        .card-content button:hover {
+            background-color: #444; 
+        }
+
+
+        /* Estilos para la pantalla de Categorías (Sin cambios) */
+        #categorias-screen {
+            background-color: #ffffff; 
+            padding: 0; 
+            border-bottom-left-radius: 30px; 
+            border-bottom-right-radius: 30px; 
+        }
+
+        #categorias-screen h1 {
+            background-color: #191970; 
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 0 0 30px 0; 
+            border-bottom-left-radius: 35px;
+            border-bottom-right-radius: 35px;
+        }
+        
+        .categorias-padding {
+            padding: 0 30px 30px 30px; 
+        }
+
+        /* (Estilos de botón sin cambios) */
+        .categoria-btn {
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 40px;
+            position: relative;
+            min-height: 160px; 
+            color: white;
+            font-size: 2.0rem; 
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .categoria-btn:hover {
+            transform: scale(1.03); 
+        }
+        
+        /* Paleta para Estrés (Sin cambios) */
+        .categoria-btn.estres {
+            background: linear-gradient(to right, #2F4156, #567C8D, #C8D9E6, #F5EFEB, #FFFFFF);
+        }
+
+        /* --- ÚNICO CAMBIO AQUÍ --- */
+        .categoria-btn.ansiedad {
+            /* Se aplica la nueva paleta de colores como un gradiente */
+            background: linear-gradient(to right, #EC6426, #F8A91F, #FDE3CF, #632713);
+        }
+        /* --- FIN DEL CAMBIO --- */
+
+        .categoria-btn.depresion {
+            background-color: #9370DB; 
+        }
+
+        /* (Estilos de imagen sin cambios) */
+        .categoria-btn img {
+            width: 160px; 
+            height: 160px; 
+            object-fit: cover;
+            position: absolute;
+            bottom: 0px; 
+            right: 0px; 
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        
+        <div id="inicio-screen">
+            <div class="image-wrapper">
+                <img src="imag/SIS.jpg" alt="Dos personas tomadas de la mano">
+            </div>
+
+            <div class="card-content">
+                <h1>TEKOPO</h1>
+                <h2>Cuidar tu mente también es cuidarte a vos</h2>
+                <p>App informativa sobre estrés, ansiedad y depresión para generar conciencia y promover el autocuidado.</p>
+                <h3>SALUD MENTAL</h3>
+                <button id="btn-comenzar">COMENZAR</button>
+            </div>
+        </div>
+
+        <div id="categorias-screen" style="display: none;">
+            <h1>CATEGORÍAS</h1>
+            <div class="categorias-padding">
+                <div class="categoria-btn estres">
+                    <span>Estrés</span>
+                    <img src="imag\estres-removebg-preview.png" alt="Estrés">
+                </div>
+                <div class="categoria-btn ansiedad">
+                    <span>Ansiedad</span>
+                    <img src="imag\ansiedad-removebg-preview.png" alt="Ansiedad">
+                </div>
+                <div class="categoria-btn depresion">
+                    <span>Depresión</span>
+                    <img src="imag\depresion-removebg-preview.png" alt="Depresión">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const btnComenzar = document.getElementById('btn-comenzar');
+        const inicioScreen = document.getElementById('inicio-screen');
+        const categoriasScreen = document.getElementById('categorias-screen');
+
+        btnComenzar.addEventListener('click', () => {
+            
+            const inicioHeight = inicioScreen.offsetHeight;
+            
+            categoriasScreen.style.minHeight = inicioHeight + 'px';
+            
+            inicioScreen.style.display = 'none';
+            
+            categoriasScreen.style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
