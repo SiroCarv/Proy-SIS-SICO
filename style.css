@@ -131,14 +131,14 @@ body {
     padding: 0 30px 30px 30px; 
 }
 
-/* (Estilos de botón sin cambios) */
+/* (Estilo de botón base sin cambios) */
 .categoria-btn {
     border-radius: 20px;
     padding: 20px;
     margin-bottom: 40px;
     position: relative;
     min-height: 160px; 
-    color: white;
+    color: white; /* <-- CAMBIO AQUÍ (Base es blanca) */
     font-size: 2.0rem; 
     font-weight: 700;
     cursor: pointer;
@@ -149,21 +149,25 @@ body {
     transform: scale(1.03); 
 }
 
-/* Paleta para Estrés (Sin cambios) */
+/* --- CAMBIO AQUÍ --- */
 .categoria-btn.estres {
     background: linear-gradient(to right, #2F4156, #567C8D, #C8D9E6, #F5EFEB, #FFFFFF);
+    color: white; /* Se cambia a blanco (como se solicitó) */
 }
 
-/* --- ÚNICO CAMBIO AQUÍ --- */
+/* (Sin cambios, ya era blanco) */
 .categoria-btn.ansiedad {
-    /* Se aplica la nueva paleta de colores como un gradiente */
     background: linear-gradient(to right, #EC6426, #F8A91F, #FDE3CF, #632713);
+    color: white; /* (Aseguramos que sea blanco) */
+}
+
+/* --- CAMBIO AQUÍ --- */
+.categoria-btn.depresion {
+    background: linear-gradient(to right, #AE90CA, #C3AEDA, #D7CBE4, #E9E0F2);
+    color: white; /* Se cambia a blanco (como se solicitó) */
 }
 /* --- FIN DEL CAMBIO --- */
 
-.categoria-btn.depresion {
-    background-color: #9370DB; 
-}
 
 /* (Estilos de imagen sin cambios) */
 .categoria-btn img {
